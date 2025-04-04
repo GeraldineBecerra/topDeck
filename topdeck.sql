@@ -211,4 +211,3 @@ CREATE TABLE comentario (
     CONSTRAINT FK_COMENTARIO_CARTA FOREIGN KEY (nro_carta) REFERENCES carta(nro_carta),
     CONSTRAINT FK_COMENTARIO_VENDEDOR FOREIGN KEY (id_vendedor) REFERENCES persona(id_persona)
 );
-"hola mundo :)"
