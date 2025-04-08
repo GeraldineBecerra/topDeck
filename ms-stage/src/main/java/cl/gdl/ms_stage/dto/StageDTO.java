@@ -1,5 +1,7 @@
 package cl.gdl.ms_stage.dto;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,17 +18,18 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="HTE_PRUEBA")
+@Table(name="STAGE")
+
 
 public class StageDTO {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.UUID)
 
     @Column(name = "ID_STAGE")
-    private int idStage;
+    private UUID idStage;
     
-    @Column(name = "NAME_STAGE")
+    @Column(name = "STAGE")
     private String nameStage;
 
 
