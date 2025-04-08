@@ -81,7 +81,7 @@ CREATE TABLE estado(
     estado VARCHAR2(20) NOT NULL,
     CONSTRAINT PK_ESTADO PRIMARY KEY (id_estado),
     CONSTRAINT UQ_ESTADO UNIQUE (estado)
-)
+);
 
 CREATE TABLE comuna (
     id_comuna RAW(16) DEFAULT SYS_GUID(),
@@ -98,15 +98,15 @@ CREATE TABLE rol(
     CONSTRAINT PK_ROL PRIMARY KEY (id_rol),
     CONSTRAINT UQ_ROL UNIQUE (rol),
     CONSTRAINT CHK_DISABLED CHECK (disabled IN (0, 1)),
-):
+);
 
 CREATE TABLE entrega (
     id_entrega RAW(16) DEFAULT SYS_GUID(),
     entrega VARCHAR2(30) NOT NULL,
     CONSTRAINT PK_ENTREGA PRIMARY KEY (id_entrega),
-    CONSTRAINT UQ_ENTREGA UNIQUE (comuna)
+    CONSTRAINT UQ_ENTREGA UNIQUE (entrega)
 );
-
+--arreglar el email (lower)
 CREATE TABLE persona (
     id_persona RAW(16) DEFAULT SYS_GUID(),
     nombre VARCHAR2(50) NOT NULL,
@@ -128,6 +128,13 @@ CREATE TABLE carta(
     id_marca RAW(16) NOT NULL,
     id_stage RAW(16) NOT NULL,
     id_edicion RAW(16) NOT NULL,
+    id_tipo RAW(16) NOT NULL,
+    id_condicion RAW(16) NOT NULL,
+    id_categoria RAW(16) NOT NULL,
+    id_rareza RAW(16) NOT NULL,
+    id_energia RAW(16) NOT NULL,
+    id_idioma RAW(16) NOT NULL,
+    id_estado RAW(16) NOT NULL,
     CONSTRAINT PK_NRO_CARTA PRIMARY KEY (nro_carta),
     CONSTRAINT UQ_NOM_CARTA UNIQUE (nom_carta),
     CONSTRAINT FK_CARTA_MARCA FOREIGN KEY(id_marca) REFERENCES marca(id_marca),
@@ -172,7 +179,7 @@ CREATE TABLE pedido (
     CONSTRAINT FK_PEDIDO_ESTADO FOREIGN KEY (id_estado) REFERENCES estado(id_estado),
     CONSTRAINT FK_PEDIDO_MEDIO FOREIGN KEY (id_medio_de_pago) REFERENCES medio_de_pago(id_medio_de_pago),
     CONSTRAINT FK_PEDIDO_ENTREGA FOREIGN KEY (id_entrega) REFERENCES entrega(id_entrega),
-    CONSTRAINT FK_PEDIDO_ESTADO FOREIGN KEY (id_estado_pedido) REFERENCES estado_pedido(id_estado_pedido)
+    CONSTRAINT FK_PEDIDO_ESTADO_PEDIDO FOREIGN KEY (id_estado_pedido) REFERENCES estado_pedido(id_estado_pedido)
 );
 
 CREATE TABLE detalle_pedido (
@@ -202,12 +209,12 @@ CREATE TABLE comentario (
     id_comentario RAW(16) DEFAULT SYS_GUID(),
     id_persona RAW(16) NOT NULL,
     nro_carta NUMBER,
-    id_vendedor RAW(16),
+    id_sobre RAW(16),
     comentario VARCHAR2(500) NOT NULL,
     calificacion NUMBER(1) CHECK (calificacion BETWEEN 1 AND 5),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_COMENTARIO PRIMARY KEY (id_comentario),
     CONSTRAINT FK_COMENTARIO_PERSONA FOREIGN KEY (id_persona) REFERENCES persona(id_persona),
     CONSTRAINT FK_COMENTARIO_CARTA FOREIGN KEY (nro_carta) REFERENCES carta(nro_carta),
-    CONSTRAINT FK_COMENTARIO_VENDEDOR FOREIGN KEY (id_vendedor) REFERENCES persona(id_persona)
+    CONSTRAINT FK_COMENTARIO_SOBRE FOREIGN KEY (id_sobre) REFERENCES sobre(id_sobre)
 );
