@@ -218,3 +218,6 @@ CREATE TABLE comentario (
     CONSTRAINT FK_COMENTARIO_CARTA FOREIGN KEY (nro_carta) REFERENCES carta(nro_carta),
     CONSTRAINT FK_COMENTARIO_SOBRE FOREIGN KEY (id_sobre) REFERENCES sobre(id_sobre)
 );
+
+
+"prueba repo"
