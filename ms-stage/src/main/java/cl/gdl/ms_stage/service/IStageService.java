@@ -15,6 +15,6 @@ public interface IStageService {
 
     StageDTO getById(UUID id);
 
-    public List<StageDTO> getAll();
+    List<StageDTO> getAll();
 
 }
