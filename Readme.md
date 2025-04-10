@@ -26,6 +26,19 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todos los Stage registrado.
   - http://localhost:8090/api/stage?id=da13038a-a845-46da-a5e3-af8755d3ec31
 
+
+*Rutas Edicion*
+- GETBYID: Devuelve una Edicion por Id.
+  - http://localhost:8091/api/edicion/getById/
+- POST: Recibe los datos de una nueva edicion y los almacena en la BBDD.
+  - http://localhost:8091/api/edicion/insert
+- DELETE: Recibe el id de una Edicion registrado y lo elimina.
+  - http://localhost:8091/api/edicion/delete/{id}
+- PUT: Recibe los datos de una Edicion registrado y los actualiza.
+  - http://localhost:8091/api/edicion/update/{id}
+- GETALL: Recibe todos los Edicion registrado.
+  - http://localhost:8091/api/edicion
+
 *Rutas Condicion*
 - GET: Devuelve la condicion segun el ID.
   - http://localhost:8010/api/condicion/getById/6d3dc4b7-eccb-4f10-8241-b0351eaea657
@@ -37,6 +50,7 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8010/api/condicion/update/6d3dc4b7-eccb-4f10-8241-b0351eaea657
 - GETALL: Recibe todas las Condiciones registradas.
   - http://localhost:8010/api/condicion
+
 
 ## Construido Con 🛠
 - [Java](https://www.java.com/es/) - El lenguaje utilizado
