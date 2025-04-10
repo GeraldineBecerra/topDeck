@@ -21,9 +21,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "CATEGORIA")
 public class CategoriaDTO {
-    @Id
-    @GeneratedValue(strategy=GenerationType.UUID)
 
+    @Id
+    @GeneratedValue
     @Column(name = "ID_CATEGORIA")
     private UUID idCategoria;
     
