@@ -10,34 +10,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import cl.gdl.ms_categoria.dto.CategoriaDTO;
+import cl.gdl.ms_categoria.service.ICategoriaService;
+
+@RestController
+@RequestMapping("/api/categoria")
 public class CategoriaController {
 
     @Autowired
     ICategoriaService categoriaService;
 
     @PostMapping("/insert")
-    public CondicionDTO insert(@RequestBody CondicionDTO condicion){
-        return condicionService.insert(condicion);
+    public CategoriaDTO insert(@RequestBody CategoriaDTO categoria){
+        return categoriaService.insert(categoria);
     }
     
     @PutMapping("update/{id}")
-    public CondicionDTO update(@PathVariable UUID id, @RequestBody CondicionDTO condicion){
-        return condicionService.update(id, condicion);
+    public CategoriaDTO update(@PathVariable UUID id, @RequestBody CategoriaDTO categoria){
+        return categoriaService.update(id, categoria);
     }
 
     @DeleteMapping("delete/{id}")
-    public CondicionDTO delete(@PathVariable UUID id){
-        return condicionService.delete(id);
+    public CategoriaDTO delete(@PathVariable UUID id){
+        return categoriaService.delete(id);
     }
 
-    @GetMapping("getById/{id}")
-    public CondicionDTO getById(@PathVariable UUID id){
-        return condicionService.getById(id);
+    @GetMapping("getbyid/{id}")
+    public CategoriaDTO getById(@PathVariable UUID id){
+        return categoriaService.getById(id);
     }
 
     @GetMapping
-    public List<CondicionDTO> getAll(){
-        return condicionService.getAll();
+    public List<CategoriaDTO> getAll(){
+        return categoriaService.getAll();
     }
 }

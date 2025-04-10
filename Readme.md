@@ -51,6 +51,18 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Condiciones registradas.
   - http://localhost:8010/api/condicion
 
+*Rutas Categoria*
+- GET: Devuelve la Categoria segun el ID.
+  - http://localhost:8094/api/categoria/getbyid/f88f34b8-c0be-4443-afec-c04b47bf9705
+- POST: Recibe los datos de una Categoria y los almacena en la BBDD.
+  - http://localhost:8094/api/categoria/insert
+- DELETE: Recibe el id de una Categoria registrada y la elimina.
+  - http://localhost:8094/api/categoria/delete/f88f34b8-c0be-4443-afec-c04b47bf9705
+- PUT: Recibe los datos de una Categoria registrada y los actualiza.
+  - http://localhost:8094/api/categoria/update/f88f34b8-c0be-4443-afec-c04b47bf9705
+- GETALL: Recibe todas las Categoria registradas.
+  - http://localhost:8094/api/categoria
+
 
 ## Construido Con 🛠
 - [Java](https://www.java.com/es/) - El lenguaje utilizado
