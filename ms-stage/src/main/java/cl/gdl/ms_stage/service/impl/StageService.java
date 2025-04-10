@@ -18,7 +18,7 @@ public class StageService implements IStageService{
 
     @Override
     public StageDTO insert(StageDTO stage) {
-
+        
         return stageRepository.save(stage);
     }
 

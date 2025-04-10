@@ -27,6 +27,20 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8090/api/stage?id=da13038a-a845-46da-a5e3-af8755d3ec31
 
 
+  ## Ejecutando las Pruebas ⚙
+  *Rutas Tipo*
+- GET: Devuelve todos los Tipos.
+  - http://localhost:8092/api/tipo/getbyid/ec418962-c43b-4485-8da0-fb1ffaf1be38
+- POST: Recibe los datos de un nuevo Tipo y los almacena en la BBDD.
+  - http://localhost:8092/api/tipo/insert
+- DELETE: Recibe el id de un Tipo registrado y lo elimina.
+  - http://localhost:8092/api/tipo/delete/ec418962-c43b-4485-8da0-fb1ffaf1be38
+- PUT: Recibe los datos de un Tipo registrado y los actualiza.
+  - http://localhost:8092/api/tipo/update/21073bb9-7b82-4291-8cdf-a26e77b25144
+- GETALL: Recibe todos los Stage registrado.
+  - http://localhost:8092/api/tipo
+
+
 *Rutas Edicion*
 - GETBYID: Devuelve una Edicion por Id.
   - http://localhost:8091/api/edicion/getById/
@@ -62,6 +76,7 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8094/api/categoria/update/f88f34b8-c0be-4443-afec-c04b47bf9705
 - GETALL: Recibe todas las Categoria registradas.
   - http://localhost:8094/api/categoria
+
 
 
 ## Construido Con 🛠
