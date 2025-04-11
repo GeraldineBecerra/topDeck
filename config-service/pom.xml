@@ -60,6 +60,10 @@
             	<scope>import</scope>
             	<type>pom</type>
         	</dependency>
+				<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+			</dependency>
     	</dependencies>
 	</dependencyManagement>
 	<build>
