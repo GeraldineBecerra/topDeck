@@ -27,7 +27,6 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8090/api/stage?id=da13038a-a845-46da-a5e3-af8755d3ec31
 
 
-  ## Ejecutando las Pruebas ⚙
   *Rutas Tipo*
 - GET: Devuelve todos los Tipos.
   - http://localhost:8092/api/tipo/getbyid/ec418962-c43b-4485-8da0-fb1ffaf1be38
@@ -65,6 +64,17 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Condiciones registradas.
   - http://localhost:8010/api/condicion
 
+*Rutas Energia*
+- GET: Devuelve la Energia segun el ID.
+  - http://localhost:8096/api/energia/getbyid/34d85e47-8930-4095-8142-ac8b9a788cc3
+- POST: Recibe los datos de una Energia y los almacena en la BBDD.
+  - http://localhost:8096/api/energia/insert
+- DELETE: Recibe el id de una CoEnergia registrada y la elimina.
+  - http://localhost:8096/api/energia/delete/83d90ca5-87b6-4b9b-82b8-db771e809203
+- PUT: Recibe los datos de una Energia registrada y los actualiza.
+  - http://localhost:8096/api/energia/update/34d85e47-8930-4095-8142-ac8b9a788cc3
+- GETALL: Recibe todas las Energias registradas.
+  - http://localhost:8096/api/energia
 *Rutas Categoria*
 - GET: Devuelve la Categoria segun el ID.
   - http://localhost:8094/api/categoria/getbyid/f88f34b8-c0be-4443-afec-c04b47bf9705
