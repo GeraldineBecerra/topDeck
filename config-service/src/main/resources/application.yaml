@@ -5,7 +5,7 @@ spring:
         config:
             server:
                 git:
-                    default-label: SCRUM-27-agregar-config-service
+                    default-label: dev
                     uri: https://github.com/Deimonlay13/topDeck
                     search-paths: config-data
     application:
