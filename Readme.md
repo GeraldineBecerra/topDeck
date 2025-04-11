@@ -77,6 +77,18 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Categoria registradas.
   - http://localhost:8094/api/categoria
 
+  Rutas Marca*
+- GET: Devuelve todas las Marca.
+  - http://localhost:8072/api/marca/getbyid/ef019750-cbc3-47e0-ab0a-997587dab3c0
+- POST: Recibe los datos de un nuevo Stage y los almacena en la BBDD.
+  - http://localhost:8072/api/marca/insert
+- DELETE: Recibe el id de un Stage registrado y lo elimina.
+  - http://localhost:8072/api/marca/delete/a6aec557-a47d-4a4b-a3e4-136f767a1c2b
+- PUT: Recibe los datos de un Stage registrado y los actualiza.
+  - http://localhost:8072/api/marca/update/699852c9-dbfb-40d4-8601-7978c9bcf599
+- GETALL: Recibe todos los Stage registrado.
+  - http://localhost:8072/api/marca
+
 
 
 ## Construido Con 🛠
