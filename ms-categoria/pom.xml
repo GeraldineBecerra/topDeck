@@ -67,7 +67,20 @@
             <type>pom</type>
         </dependency>
 	</dependencies>
-
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>2022.0.0</version> <scope>import</scope>
+            <type>pom</type>
+        </dependency>
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bootstrap</artifactId>
+		</dependency>
+    </dependencies>
+</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
