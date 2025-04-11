@@ -75,6 +75,17 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8096/api/energia/update/34d85e47-8930-4095-8142-ac8b9a788cc3
 - GETALL: Recibe todas las Energias registradas.
   - http://localhost:8096/api/energia
+*Rutas Categoria*
+- GET: Devuelve la Categoria segun el ID.
+  - http://localhost:8094/api/categoria/getbyid/f88f34b8-c0be-4443-afec-c04b47bf9705
+- POST: Recibe los datos de una Categoria y los almacena en la BBDD.
+  - http://localhost:8094/api/categoria/insert
+- DELETE: Recibe el id de una Categoria registrada y la elimina.
+  - http://localhost:8094/api/categoria/delete/f88f34b8-c0be-4443-afec-c04b47bf9705
+- PUT: Recibe los datos de una Categoria registrada y los actualiza.
+  - http://localhost:8094/api/categoria/update/f88f34b8-c0be-4443-afec-c04b47bf9705
+- GETALL: Recibe todas las Categoria registradas.
+  - http://localhost:8094/api/categoria
 
 
 
