@@ -1,4 +1,4 @@
-package cl.gdl.ms_categoria.dto;
+package cl.gdl.ms_rareza.dto;
 
 import java.util.UUID;
 
@@ -12,21 +12,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "CATEGORIA")
-public class CategoriaDTO {
-
+@Table(name="RAREZA")
+public class RarezaDTO {
     @Id
-    @GeneratedValue
-    @Column(name = "ID_CATEGORIA")
-    private UUID idCategoria;
-    
-    @Column(name = "CATEGORIA")
-    private String nameCategoria;
+    @GeneratedValue(strategy=GenerationType.UUID)
+
+    @Column(name = "ID_RAREZA")
+    private UUID idRareza;
+
+    @Column(name = "RAREZA")
+    private String nameRareza;
+
+
 }
