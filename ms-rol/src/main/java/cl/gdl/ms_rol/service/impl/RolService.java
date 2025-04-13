@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cl.gdl.ms_rol.dto.RolDTO;
+import cl.gdl.ms_rol.dto.RolUpdateDTO;
 import cl.gdl.ms_rol.errors.DuplicatedNameException;
 import cl.gdl.ms_rol.errors.NoDataException;
 import cl.gdl.ms_rol.errors.NotFoundException;
@@ -30,15 +31,16 @@ public class RolService implements IRolService{
     }
 
     @Override
-    public RolDTO update(UUID id, RolDTO categoria) {
-        checkRolExists(id);
+    public RolDTO update(UUID id, RolUpdateDTO categoria) {
+
+        RolDTO IRol = rolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
 
         checkNameRolNotNullOrEmpty(categoria.getNameRol());
 
         checkRolNameNotExists(categoria.getNameRol());
 
-        categoria.setIdRol(id);
-        return rolRepository.save(categoria);
+        return rolRepository.save(IRol);
     }
 
     @Override

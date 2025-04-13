@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.gdl.ms_rol.dto.RolDTO;
+import cl.gdl.ms_rol.dto.RolUpdateDTO;
 import cl.gdl.ms_rol.service.IRolService;
 
 @RestController
@@ -29,7 +30,7 @@ public class RolController {
     }
     
     @PutMapping("update/{id}")
-    public RolDTO update(@PathVariable UUID id, @RequestBody RolDTO rol){
+    public RolDTO update(@PathVariable UUID id, @RequestBody RolUpdateDTO rol){
         return rolService.update(id, rol);
     }
 
