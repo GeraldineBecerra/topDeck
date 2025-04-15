@@ -124,6 +124,17 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Rarezas registradas.
   - http://localhost:8095/api/rareza
 
+    *Rutas rol*
+- GET: Devuelve el rol segun el ID.
+  - http://localhost:8013/api/rol/getbyid/17ea1b89-3404-4ed0-805d-c82c01648980
+- POST: Recibe los datos de un Rol y los almacena en la BBDD.
+  - http://localhost:8013/api/rol/insert
+- DELETE: Recibe el id de un Rol registrado y lo elimina.
+  - http://localhost:8013/api/rol/delete/17ea1b89-3404-4ed0-805d-c82c01648980
+- PUT: Recibe los datos de un Rol registrado y los actualiza.
+  - http://localhost:8013/api/rol/update/17ea1b89-3404-4ed0-805d-c82c01648980
+- GETALL: Recibe todos los Roles registradas.
+  - http://localhost:8013/api/rol
 
 ## Construido Con 🛠
 - [Java](https://www.java.com/es/) - El lenguaje utilizado
