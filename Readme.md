@@ -27,7 +27,6 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
   - http://localhost:8090/api/stage?id=da13038a-a845-46da-a5e3-af8755d3ec31
 
 
-  ## Ejecutando las Pruebas ⚙
   *Rutas Tipo*
 - GET: Devuelve todos los Tipos.
   - http://localhost:8092/api/tipo/getbyid/ec418962-c43b-4485-8da0-fb1ffaf1be38
@@ -65,6 +64,18 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Condiciones registradas.
   - http://localhost:8010/api/condicion
 
+*Rutas Energia*
+- GET: Devuelve la Energia segun el ID.
+  - http://localhost:8096/api/energia/getbyid/34d85e47-8930-4095-8142-ac8b9a788cc3
+- POST: Recibe los datos de una Energia y los almacena en la BBDD.
+  - http://localhost:8096/api/energia/insert
+- DELETE: Recibe el id de una CoEnergia registrada y la elimina.
+  - http://localhost:8096/api/energia/delete/83d90ca5-87b6-4b9b-82b8-db771e809203
+- PUT: Recibe los datos de una Energia registrada y los actualiza.
+  - http://localhost:8096/api/energia/update/34d85e47-8930-4095-8142-ac8b9a788cc3
+- GETALL: Recibe todas las Energias registradas.
+  - http://localhost:8096/api/energia
+
 *Rutas Categoria*
 - GET: Devuelve la Categoria segun el ID.
   - http://localhost:8094/api/categoria/getbyid/f88f34b8-c0be-4443-afec-c04b47bf9705
@@ -77,7 +88,53 @@ A continuación, se presenta una guía paso a paso para configurar el entorno de
 - GETALL: Recibe todas las Categoria registradas.
   - http://localhost:8094/api/categoria
 
+  Rutas Marca*
+- GET: Devuelve todas las Marca.
+  - http://localhost:8072/api/marca/getbyid/ef019750-cbc3-47e0-ab0a-997587dab3c0
+- POST: Recibe los datos de un nuevo Stage y los almacena en la BBDD.
+  - http://localhost:8072/api/marca/insert
+- DELETE: Recibe el id de un Stage registrado y lo elimina.
+  - http://localhost:8072/api/marca/delete/a6aec557-a47d-4a4b-a3e4-136f767a1c2b
+- PUT: Recibe los datos de un Stage registrado y los actualiza.
+  - http://localhost:8072/api/marca/update/699852c9-dbfb-40d4-8601-7978c9bcf599
+- GETALL: Recibe todos los Stage registrado.
+  - http://localhost:8072/api/marca
 
+*Rutas region*
+- GET: Devuelve la Regiones segun el ID.
+  - http://localhost:8071/api/region/getbyid/524e7bc6-8894-40b7-b1b5-3854fde0a4b9
+- POST: Recibe los datos de una Region y los almacena en la BBDD.
+  - http://localhost:8071/api/region/insert
+- DELETE: Recibe el id de una Region registrada y la elimina.
+  - http://localhost:8071/api/region/delete/5d45279b-dac0-4330-af8b-f5716a52cfcd
+- PUT: Recibe los datos de una Region registrada y los actualiza.
+  - http://localhost:8071/api/region/update/5d45279b-dac0-4330-af8b-f5716a52cfcd
+- GETALL: Recibe todas las Region registradas.
+  - http://localhost:8071/api/region
+  
+  *Rutas rareza*
+- GET: Devuelve la Rareza segun el ID.
+  - http://localhost:8095/api/rareza/getById/28b98b2d-a895-48f9-bfe5-12cf4812c8a5
+- POST: Recibe los datos de una Rareza y los almacena en la BBDD.
+  - http://localhost:8095/api/rareza/insert
+- DELETE: Recibe el id de una Rareza registrada y la elimina.
+  - http://localhost:8095/api/rareza/delete/5cdc19b7-459f-4952-89bc-f0226f2c1f1e
+- PUT: Recibe los datos de una Rareza registrada y los actualiza.
+  - http://localhost:8095/api/rareza/update/34aa4af5-56ee-4837-b4ed-2c388296e609
+- GETALL: Recibe todas las Rarezas registradas.
+  - http://localhost:8095/api/rareza
+
+    *Rutas rol*
+- GET: Devuelve el rol segun el ID.
+  - http://localhost:8013/api/rol/getbyid/17ea1b89-3404-4ed0-805d-c82c01648980
+- POST: Recibe los datos de un Rol y los almacena en la BBDD.
+  - http://localhost:8013/api/rol/insert
+- DELETE: Recibe el id de un Rol registrado y lo elimina.
+  - http://localhost:8013/api/rol/delete/17ea1b89-3404-4ed0-805d-c82c01648980
+- PUT: Recibe los datos de un Rol registrado y los actualiza.
+  - http://localhost:8013/api/rol/update/17ea1b89-3404-4ed0-805d-c82c01648980
+- GETALL: Recibe todos los Roles registradas.
+  - http://localhost:8013/api/rol
 
 ## Construido Con 🛠
 - [Java](https://www.java.com/es/) - El lenguaje utilizado
