@@ -14,6 +14,7 @@ import cl.gdl.ms_rol.errors.NotFoundException;
 import cl.gdl.ms_rol.errors.RolNameNullException;
 import cl.gdl.ms_rol.repository.IRolRepository;
 import cl.gdl.ms_rol.service.IRolService;
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class RolService implements IRolService{
@@ -31,16 +32,24 @@ public class RolService implements IRolService{
     }
 
     @Override
-    public RolDTO update(UUID id, RolUpdateDTO categoria) {
+    public RolDTO update(UUID id, RolUpdateDTO rolUpdateDTO) {
+        RolDTO existingRol = rolRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Rol con ID " + id + " no encontrado"));
 
-        RolDTO IRol = rolRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Rol no encontrado"));
+        // Verificar si se está intentando cambiar el nombre y si el nuevo nombre ya
+        // existe
+        if (rolUpdateDTO.getNameRol() != null && !rolUpdateDTO.getNameRol().equals(existingRol.getNameRol())) {
+            if (rolRepository.findByNameRolIgnoreCase(rolUpdateDTO.getNameRol()).isPresent()) {
+                throw new IllegalStateException("Ya existe un rol con el nombre: " + rolUpdateDTO.getNameRol());
+            }
+            existingRol.setNameRol(rolUpdateDTO.getNameRol());
+        }
 
-        checkNameRolNotNullOrEmpty(categoria.getNameRol());
+        if (rolUpdateDTO.getDescripcion() != null) {
+            existingRol.setDescripcion(rolUpdateDTO.getDescripcion());
+        }
 
-        checkRolNameNotExists(categoria.getNameRol());
-
-        return rolRepository.save(IRol);
+        return rolRepository.save(existingRol);
     }
 
     @Override
